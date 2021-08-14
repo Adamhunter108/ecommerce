@@ -1,0 +1,32 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+main {
+  min-height: 85vh;
+  background-image: linear-gradient(to bottom right, #8F4D2F, #F2B49A, #D88565, #8F4D2F);
+}
+
+/* some margin around the rating stars */
+.rating span {
+  margin: 0.1rem;
+}
+/* pad the price */
+h3 {
+  padding: 1rem;
+}
+
+footer {
+  background-color: black;
+}
+
