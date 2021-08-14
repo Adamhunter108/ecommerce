@@ -30,9 +30,23 @@ def getRoutes(request):
 
     return Response(routes)
 
+
 @api_view(['GET'])
 def getProducts(request):
     # return JsonResponse(products, safe=False)
     # above was before django rest framework was being used
 
     return Response(products)
+
+
+@api_view(['GET'])
+def getProduct(request, pk):
+    product = None
+    # loop through products array to find product with primary key (_id) that matches    
+    for i in products:
+        if i['_id'] == pk:
+            product = i
+            break
+
+    return Response(product)
+
