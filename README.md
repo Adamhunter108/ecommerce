@@ -8,10 +8,10 @@ A full-stack e-commerce website.  Backend is built with Django and the frontend 
 * Python
 * Node.js
 #### `Frontend:`
-* In root of `frontend`, install developer dependencies: `npm i`
+* In root directory of `frontend`, install developer dependencies: `npm i`
 * Start frontend Node.js server: `npm start`
 #### `Backend:`
-* Create a virtual environment:
+* In root directory of `backend`, create a virtual environment:
 `virtualenv venv`
 * Activate the virtual environment:
 `source venv/bin/activate` (if on Mac)
