@@ -20,21 +20,44 @@ function HomeScreen() {
 
     const [products, setProducts] = useState([])
 
+    // useEffect(() => {
+    //     console.log('useEffect triggered')
+
+    //     //function is async and await returns the promise of the api url, data is destructured and then state is reset
+    //     async function fetchProducts() {
+
+    //         const { data } = await axios.get('http://127.0.0.1:8000/api/products')
+    //         setProducts(data)
+    //     }
+
+    //     fetchProducts()
+    //     // make the call and load data
+
+    //     })
+
+    // }, [])
+    // empty array at end so useEffect updates when componend loads, not when state is changed
+
+
+    // useEffect(() => {
+    //     function fetchProducts() {
+    //         axios.get('http://127.0.0.1:8000/api/products').then(res => {
+    //             console.log(res.data);
+        
+    //     fetchProducts()
+    // }, [])
+
     useEffect(() => {
-        // console.log('useEffect triggered')
-
-        //function is async and await returns the promise of the api url, data is destructured and then state is reset
+        console.log('useEffect triggered')
         async function fetchProducts() {
-
             const { data } = await axios.get('http://127.0.0.1:8000/api/products')
             setProducts(data)
         }
 
         fetchProducts()
-        // make the call and load data
-
+        
     }, [])
-    // empty array at end so useEffect updates when componend loads, not when state is changed
+
 
     return (
         <div>
