@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import products from '../products'
 import Product from '../components/Product'
+import axios from 'axios'
 
+// import products from '../products'
+// this was the temporary products import
 
+// useState docs
+// https://reactjs.org/docs/hooks-state.html
+
+// useEffect docs
+// https://reactjs.org/docs/hooks-effect.html
+// useEffect gets triggered every time the component loads (or when a state attribute/value gets updated)
+
+// axios docs
+// https://axios-http.com/
 
 function HomeScreen() {
+
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        // console.log('useEffect triggered')
+
+        //function is async and await returns the promise of the api url, data is destructured and then state is reset
+        async function fetchProducts() {
+
+            const { data } = await axios.get('http://127.0.0.1:8000/api/products')
+            setProducts(data)
+        }
+
+        fetchProducts()
+        // make the call and load data
+
+    }, [])
+    // empty array at end so useEffect updates when componend loads, not when state is changed
+
     return (
         <div>
             <h1>Latest Products</h1>
