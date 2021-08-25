@@ -117,3 +117,4 @@ dmypy.json
 # Frontend Dependency directories
 node_modules/
 jspm_packages/
+frontend/public/.DS_Store
