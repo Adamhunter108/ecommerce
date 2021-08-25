@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Router } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import products from '../products'
+import axios from 'axios'
+
+// import products from '../products'
+// not necessary anymore
 
 
 function ProductScreen({ match }) {
 
     // variable that is the result of what is found in the products array looking for the _id - p for product
-    const product = products.find((p) => p._id === match.params.id)
+    // const product = products.find((p) => p._id === match.params.id)
+    // not necessary anymore
+
+
+    const [product, setProduct] = useState([])
+
+
+    useEffect(() => {
+        console.log('useEffect triggered')
+        async function fetchProduct() {
+            const { data } = await axios.get(`/api/products/${match.params.id}`)
+            setProduct(data)
+        }
+        fetchProduct()
+    }, [])
+
+
 
     return (
         <div>
