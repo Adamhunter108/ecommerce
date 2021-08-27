@@ -1,6 +1,18 @@
 
 // reducers are functions that takes in the current state and an action type what to do with the state and will update the store
 
-const produtListReducers (state ={ products: [] }, action) => {
-    case 'PRODUCT_LIST_REQUEST':
+export const productListReducer = (state ={ products: [] }, action) => {
+    switch (action.type) {
+        case 'PRODUCT_LIST_REQUEST':
+            return { loading: true, products: [] }
+
+        case 'PRODUCT_LIST_SUCCESS':
+            return { loading: false, products: action.payload }
+
+        case 'PRODUCT_LIST_FAIL':
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
 }
