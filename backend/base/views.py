@@ -51,6 +51,7 @@ def getProduct(request, pk):
     #     if i['_id'] == pk:
     #         product = i
     #         break
+    # above was for before the database was being queried
 
     product = Product.objects.get(_id=pk)
     serializer = ProductSerializer(product, many=False) 
