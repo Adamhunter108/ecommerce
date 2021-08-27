@@ -17,7 +17,8 @@ class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     # user has a relationship to User, on_delete is set to null so if a user gets deleted, their created child elements will not be deleted
     name = models.CharField(max_length=255, null=True, blank=True)
-    #image = 
+    image = models.ImageField(null=True, blank=True) 
+    # in order to use ImageField you need to use install Pillow, an image processing library suggested by Django
     brand = models.CharField(max_length=255, null=True, blank=True)
     category = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
