@@ -41,6 +41,8 @@ class Migration(migrations.Migration):
                 ('order', models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='base.order')),
             ],
         ),
+        migrations.CreateModel(
+            name='Review',
             fields=[
                 ('name', models.CharField(blank=True, max_length=255, null=True)),
                 ('rating', models.IntegerField(blank=True, default=0, null=True)),
