@@ -116,7 +116,7 @@ function ProductScreen({ match, history }) {
                                 {product.countInStock > 0 && (
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Qty</Col>
+                                            <Col>Qty:</Col>
                                             <Col xs='auto' className='my-1'>
                                                 <Form.Control
                                                     as="select"

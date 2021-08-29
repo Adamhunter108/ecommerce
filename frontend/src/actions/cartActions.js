@@ -8,7 +8,7 @@ import {
 // getState() returns the current state tree of application; is equal to the last value returned by the store's reducer
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-    const { data } = await axios.get(`/api/products${id}`)
+    const { data } = await axios.get(`/api/products/${id}`)
 
     dispatch({
         type: CART_ADD_ITEM,
