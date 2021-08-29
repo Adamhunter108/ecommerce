@@ -8,15 +8,15 @@ A full-stack e-commerce website. Django handles the backend for managing users, 
 * Python
 * Node.js
 #### `Frontend:`
-* In root directory of `frontend`, install developer dependencies: `npm i`
-* Start frontend Node.js server: `npm start`
-#### `Backend:`
-* In root directory of `backend`, create a virtual environment:
-`virtualenv venv`
-* Activate the virtual environment:
-`source venv/bin/activate` (if on Mac or Linux)
-`c:\>c:\Python35\python -m venv c:\path\to\venv` (if on Windows)
-* Install dependencies:
-`pip install -r requirements.txt`
-* Start the backend Django server:
+* In root directory of `frontend`, install developer dependencies:<br> `npm i` <br>
+* Start frontend Node.js server:<br> `npm start` <br>
+#### `Backend:` <br>
+* In root directory of `backend`, create a virtual environment:<br>
+`virtualenv venv` <br>
+* Activate the virtual environment: <br>
+`source venv/bin/activate` (if on Mac or Linux) <br>
+`c:\>c:\Python35\python -m venv c:\path\to\venv` (if on Windows) <br>
+* Install dependencies: <br>
+`pip install -r requirements.txt` <br>
+* Start the backend Django server: <br>
 `python manage.py runserver`
