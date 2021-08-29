@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Router } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Button, Card, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -14,7 +14,7 @@ import { listProductDetails } from '../actions/productActions'
 // not necessary anymore
 
 
-function ProductScreen({ match }) {
+function ProductScreen({ match, history }) {
 
     // variable that is the result of what is found in the products array looking for the _id - p for product
     // const product = products.find((p) => p._id === match.params.id)
@@ -33,6 +33,10 @@ function ProductScreen({ match }) {
     // }, [])
     // not making API call here anymore
 
+    // qty set to state within the component (useState hook), not redux
+    const [qty, setQty] = useState(1)
+
+
 
     const dispatch = useDispatch()
 
@@ -46,6 +50,13 @@ function ProductScreen({ match }) {
 
     // let product = {}
     // not necessary
+
+
+    const addToCartHandler = () => {
+        console.log(`product number ${match.params.id} tossed in the bag`)
+        history.push(`/cart/${match.params.id}?qty=${qty}`)
+    }
+
 
     return (
         <div>
@@ -102,8 +113,43 @@ function ProductScreen({ match }) {
                                     </Row>
                                 </ListGroup.Item>
 
+                                {product.countInStock > 0 && (
+                                    <ListGroup.Item>
+                                        <Row>
+                                            <Col>Qty</Col>
+                                            <Col xs='auto' className='my-1'>
+                                                <Form.Control
+                                                    as="select"
+                                                    value={qty}
+                                                    onChange={(event) => setQty(event.target.value)}
+                                                >
+
+                                                    {
+                                                        [...Array(product.countInStock).keys()].map((x) => (
+                                                            <option key={x + 1} value={x + 1}>
+                                                                {x + 1}
+                                                            </option>
+                                                        ))
+                                                    }
+                                                    {/* 
+                                                    create stock qty as options:
+                                                    created an array out of countInStock, mapped through array and created option with a key and value 
+                                                    */}
+
+                                                </Form.Control>
+                                            </Col>
+                                        </Row>
+                                    </ListGroup.Item>
+                                )}
+
                                 <ListGroup.Item>
-                                    <Button className='btn-block btn-dark' disabled={product.countInStock === 0} type='button'>Add To Cart</Button>
+                                    <Button 
+                                        onClick={addToCartHandler}
+                                        className='btn-block btn-dark' 
+                                        disabled={product.countInStock === 0} 
+                                        type='button'>
+                                            Add To Cart
+                                    </Button>
                                 </ListGroup.Item>
 
                             </Card>
