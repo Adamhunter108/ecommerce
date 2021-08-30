@@ -15,6 +15,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
         payload: {
             product: data._id,
             name: data.name,
+            image: data.image,
             price: data.price,
             countInStock: data.countInStock,
             qty
@@ -24,4 +25,13 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
     // local storage can only have key value pairs in JSON string format
 
+}
+
+export const removeFromCart = (id) => (dispatch, getState) => {
+    dispatch({
+        type: CART_REMOVE_ITEM,
+        payload: id, 
+    })
+
+    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }
