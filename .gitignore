@@ -118,3 +118,6 @@ dmypy.json
 node_modules/
 jspm_packages/
 frontend/public/.DS_Store
+
+# notes
+notes/
