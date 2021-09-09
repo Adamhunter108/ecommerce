@@ -6,7 +6,7 @@ import {
     USER_LOGOUT
  } from '../constants/userConstants'
 
- export const login = (email, password) => (dispatch) => {
+ export const login = (email, password) => async (dispatch) => {
      try {
         dispatch({
             type: USER_LOGIN_REQUEST
@@ -16,22 +16,16 @@ import {
             headers:{
                 'Content-Type': 'application/json'
             }
-
         }
 
-        // const { data } = await axios.post(
-        //     '/api/users/login/',
-        //     {'username': email, 'password': password},
-        //     config
-        //     )
-        // not sure why await is breaking this...
-
-        const { data } = axios.post(
+        const { data } = await axios.post(
             '/api/users/login/',
-            { 'username': email, 'password': password },
+            {'username': email, 'password': password},
             config
-        )
-
+            )
+        // not sure why 'await' is breaking this...
+        // now I do: in order to use await, the function directly enclosing it needs to be async
+        
 
             dispatch({
                 type: USER_LOGIN_SUCCESS,
