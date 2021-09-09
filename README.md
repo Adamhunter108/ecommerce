@@ -1,7 +1,7 @@
 # ecommerce 📦
  
 ### `About:`
-A full-stack e-commerce website. Django handles the backend for managing users, products, and orders, stores and retrieves the data out of a database and serves up an API for the frontend to communicate with.  The frontend features React for the user interface and uses Redux for state management.
+A full-stack e-commerce website. The backend is built using the Python framework Django.  Django is responsible for managing users, products, orders, and for storing and retrieving data out of the database.  Django REST framework is being used to build, customize and serve an API for the frontend to communicate with.  The frontend features React for the user interface and uses Redux for state management.  
 
 ### `Run Locally:`
 #### `Requirements:`

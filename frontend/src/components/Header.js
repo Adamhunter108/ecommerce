@@ -1,8 +1,23 @@
 import React from 'react'
-import { Navbar, Nav, Container, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navbar, Nav, Container, Row, NavDropdown } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { logout } from '../actions/userActions'
 
 function Header() {
+
+    // https://react-redux.js.org/api/hooks#useselector-examples
+    const userLogin = useSelector(state => state.userLogin)
+    // destruct what is coming from the store to just grab userInfo
+    const { userInfo } = userLogin 
+
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        // console.log('Logout')
+        dispatch(logout())
+    }
+
     return (
         <header>
             {/* bootstrap navbar from https://react-bootstrap.github.io/components/navbar/ */}
@@ -26,9 +41,28 @@ function Header() {
                             <Nav.Link to="/cart"><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
                         </LinkContainer>
                         
-                        <LinkContainer to='/login'>
+                        
+                        {/* if user is logged in show Profile and Logout link, else show Login link */}
+                        {userInfo ? (
+                            <NavDropdown title={'Welcome, ' + userInfo.name} id='username'>
+
+                                <LinkContainer to='/profile'>
+                                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                                </LinkContainer>
+
+                                <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+
+                            </NavDropdown>
+                        ): (
+                            <LinkContainer to='/login'>
+                                <Nav.Link to="/login"><i className="fas fa-user"></i> Login</Nav.Link>
+                            </LinkContainer>
+                        )}
+
+                        {/* <LinkContainer to='/login'>
                             <Nav.Link to="/login"><i className="fas fa-user"></i> Login</Nav.Link>
-                        </LinkContainer>
+                        </LinkContainer> */}
+                        {/* moved inside of logic above */}
 
                     </Nav>
                     </Navbar.Collapse>
