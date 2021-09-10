@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Router } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Button, Card, Form } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Button, Card, Form, FormControl } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -103,6 +103,24 @@ function ProductScreen({ match, history }) {
                                         <Col><strong>${product.price}</strong></Col>
                                     </Row>
                                 </ListGroup.Item>
+
+                                {/* should probably offer size if selling t shirts */}
+                                <ListGroup.Item>
+                                    <Row>
+                                        <Col>Size:</Col>
+                                        <Col xs='auto' className='my-1'>
+                                            <FormControl
+                                                as="select"
+                                                >
+                                                    <option>Small</option>
+                                                    <option>Medium</option>
+                                                    <option>Large</option>
+                                                    <option>XL</option>
+                                            </FormControl>
+                                        </Col>
+                                    </Row>
+                                </ListGroup.Item>                                
+            
 
                                 <ListGroup.Item>
                                     <Row>
