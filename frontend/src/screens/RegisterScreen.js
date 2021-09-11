@@ -102,7 +102,7 @@ function RegisterScreen({ location, history }) {
                 </Form.Group>
                 <br />
 
-                <Button type='submit' variant='primary'>Register</Button>
+                <Button type='submit' variant='dark'>Register</Button>
 
             </Form>
 

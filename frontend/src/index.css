@@ -14,8 +14,16 @@ code {
 
 main {
   min-height: 85vh;
-  background-image: linear-gradient(to bottom right, #8F4D2F, #F2B49A, #D88565, #8F4D2F);
+  /* this is that blush gradient for WH */
+  /* background-image: linear-gradient(to bottom right, #8F4D2F, #F2B49A, #D88565, #8F4D2F); */
+  background-image: linear-gradient(to bottom right, #e4cf12, #000000, #000000, #e4cf12);
 }
+
+/* body {
+  background-color: black;
+} */
+/* this didn't work for some reason so this is inline in public/index.html */
+
 
 /* some margin around the rating stars */
 .rating span {

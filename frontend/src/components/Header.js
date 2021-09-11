@@ -21,11 +21,21 @@ function Header() {
     return (
         <header>
             {/* bootstrap navbar from https://react-bootstrap.github.io/components/navbar/ */}
-            <Navbar bg="light" variant="light" expand="lg" collapseOnSelect>
+            <Navbar bg="black" variant="dark" expand="lg" collapseOnSelect>
                 <Container>
 
                     <LinkContainer to='/'>
-                        <Navbar.Brand to="/">White Rabbit</Navbar.Brand>
+                        <Navbar.Brand to="/">
+                        <img
+                            alt=""
+                            src="https://emojis.slackmojis.com/emojis/images/1526918323/3968/wu-tang.jpg?1526918323"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            />{' '}
+
+                            36Chambers
+                            </Navbar.Brand>
                     </LinkContainer>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

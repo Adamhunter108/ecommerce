@@ -63,7 +63,7 @@ function LoginScreen({ location, history }) {
                 </Form.Group>
                 <br />
 
-                <Button type='submit' variant='primary'>Sign in</Button>
+                <Button type='submit' variant='dark'>Sign in</Button>
 
             </Form>
 

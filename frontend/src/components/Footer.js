@@ -8,7 +8,7 @@ function Footer() {
                 <Row>
                     {/* centered and padded here, it is held at the bottom by setting the viewport height of main to 80 in index.css */}
                     <Col className="text-center py-3">
-                        Copywrite &copy; White Rabbit
+                        Copywrite &copy; 36Chambers
                     </Col>
                 </Row>
             </Container>
