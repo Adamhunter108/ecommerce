@@ -72,7 +72,7 @@ function ProductScreen({ match, history }) {
                 :(
                     <Row>
                         <Col md={6}>
-                            <Image src={product.image} alt={product.name} fluid />
+                            <Image src={product.image} alt={product.name} fluid rounded />
                         </Col>
 
                         <Col md={3}>
@@ -105,7 +105,7 @@ function ProductScreen({ match, history }) {
                                 </ListGroup.Item>
 
                                 {/* should probably offer size if selling t shirts */}
-                                <ListGroup.Item>
+                                {/* <ListGroup.Item>
                                     <Row>
                                         <Col>Size:</Col>
                                         <Col xs='auto' className='my-1'>
@@ -119,7 +119,7 @@ function ProductScreen({ match, history }) {
                                             </FormControl>
                                         </Col>
                                     </Row>
-                                </ListGroup.Item>                                
+                                </ListGroup.Item>                                 */}
             
 
                                 <ListGroup.Item>
