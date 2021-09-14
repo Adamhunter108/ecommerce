@@ -49,6 +49,8 @@ function ProfileScreen({ history }) {
         } else {
             // console.log('user info updating')
             dispatch(updateUserProfile({'id': user._id, 'name': name, 'email': email, 'password': password}))
+            setMessage('') 
+            // setting message to a blank string clears the error message about passwords not matching
         }
         
     }
