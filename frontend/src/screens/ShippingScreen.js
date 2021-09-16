@@ -13,13 +13,14 @@ function ShippingScreen({ history }) {
 
     const [address, setAddress] = useState(shippingAddress.address)
     const [city, setCity] = useState(shippingAddress.city)
+    const [postalState, setPostalState] = useState(shippingAddress.postalState)
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
     const [country, setCountry] = useState(shippingAddress.country)
 
     const submitHandler = (event) => {
         event.preventDefault()
         // console.log('submit shipping')
-        dispatch(saveShippingAddress({ address, city, postalCode, country }))
+        dispatch(saveShippingAddress({ address, city, postalState, postalCode, country }))
         history.push('/payment')
     }
 
@@ -54,6 +55,19 @@ function ShippingScreen({ history }) {
                         >
                     </Form.Control>
                 </Form.Group>
+                <br />
+                
+                <Form.Group controlId='postalCode'>
+                    <Form.Label>State</Form.Label>
+                        <Form.Control
+                            required
+                            type='text'
+                            placeholder='State'
+                            value={postalState ? postalState : ''}
+                            onChange={(event) => setPostalState(event.target.value)}
+                        >
+                    </Form.Control>
+                </Form.Group> 
                 <br />
 
                 <Form.Group controlId='postalCode'>
