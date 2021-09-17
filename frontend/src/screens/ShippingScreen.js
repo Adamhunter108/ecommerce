@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
+import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../actions/cartActions'
 
 function ShippingScreen({ history }) {
@@ -26,6 +27,9 @@ function ShippingScreen({ history }) {
 
     return (
         <FormContainer>
+
+            <CheckoutSteps step1 step2 />
+
             <h1>Shipping</h1>
 
             <Form onSubmit={submitHandler}>
@@ -36,7 +40,8 @@ function ShippingScreen({ history }) {
                             required
                             type='text'
                             placeholder='Enter Your Shipping Address'
-                            value={address ? address : ''}
+                            value={address}
+                            // value={address ? address : ''}
                             // if the address exists, add the address from state. if address doesn't exist, set to empty string
                             onChange={(event) => setAddress(event.target.value)}
                         >
@@ -50,7 +55,8 @@ function ShippingScreen({ history }) {
                             required
                             type='text'
                             placeholder='City'
-                            value={city ? city : ''}
+                            // value={city ? city : ''}
+                            value={city}
                             onChange={(event) => setCity(event.target.value)}
                         >
                     </Form.Control>
@@ -63,7 +69,8 @@ function ShippingScreen({ history }) {
                             required
                             type='text'
                             placeholder='State'
-                            value={postalState ? postalState : ''}
+                            // value={postalState ? postalState : ''}
+                            value={postalState}
                             onChange={(event) => setPostalState(event.target.value)}
                         >
                     </Form.Control>
@@ -76,7 +83,8 @@ function ShippingScreen({ history }) {
                             required
                             type='text'
                             placeholder='Zip Code'
-                            value={postalCode ? postalCode : ''}
+                            // value={postalCode ? postalCode : ''}
+                            value={postalCode}
                             onChange={(event) => setPostalCode(event.target.value)}
                         >
                     </Form.Control>
@@ -89,7 +97,8 @@ function ShippingScreen({ history }) {
                             required
                             type='text'
                             placeholder='Country'
-                            value={country ? country : ''}
+                            // value={country ? country : ''}
+                            value={country}
                             onChange={(event) => setCountry(event.target.value)}
                         >
                     </Form.Control>
