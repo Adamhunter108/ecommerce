@@ -85,6 +85,7 @@ class ShippingAddress(models.Model):
     # this has the One to One relationship where as the previous lines have One to Many relationships, on_delete set to CASCADE so if the order is deleted the shipping address will also get deleted
     address = models.CharField(max_length=255, null=True, blank=True)
     city = models.CharField(max_length=255, null=True, blank=True)
+    postalState = models.CharField(max_length=255, null=True, blank=True)
     postalCode = models.CharField(max_length=255, null=True, blank=True)
     country = models.CharField(max_length=255, null=True, blank=True)
     shippingPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
