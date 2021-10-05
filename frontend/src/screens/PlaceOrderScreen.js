@@ -41,13 +41,13 @@ function PlaceOrderScreen({ history }) {
     const placeOrder = () => {
         // console.log('Placed Order')
         dispatch(createOrder({
-            orderItems:cart.cartItems,
-            shippingAddress:cart.shippingAddress,
-            paymentMethod:cart.paymentMethod,
-            itemsPrice:cart.itemsPrice,
-            shippingPrice:cart.shippingPrice,
-            taxPrice:cart.taxPrice,
-            totalPrice:cart.totalPrice,
+            orderItems: cart.cartItems,
+            shippingAddress: cart.shippingAddress,
+            paymentMethod: cart.paymentMethod,
+            itemsPrice: cart.itemsPrice,
+            shippingPrice: cart.shippingPrice,
+            taxPrice: cart.taxPrice,
+            totalPrice: cart.totalPrice,
         }))
     }
 

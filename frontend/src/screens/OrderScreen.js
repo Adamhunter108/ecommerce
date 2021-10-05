@@ -26,7 +26,7 @@ function OrderScreen({ match }) {
 
 
     return loading ? (
-        <Loader/>
+        <Loader />
     ) : error ? (
         <Message variant='danger'>{error}</Message>
     ) : (

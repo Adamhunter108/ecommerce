@@ -31,7 +31,7 @@ function App() {
                     <Route path='/shipping' component={ShippingScreen} />
                     <Route path='/payment' component={PaymentScreen} />
                     <Route path='/placeorder' component={PlaceOrderScreen} />
-                    <Route path='/order:id?' component={OrderScreen} />
+                    <Route path='/order/:id' component={OrderScreen} />
  
                 </Container>
             </main>
