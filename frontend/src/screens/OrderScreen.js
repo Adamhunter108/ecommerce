@@ -25,6 +25,7 @@ function OrderScreen({ match }) {
     }
 
 
+    // https://www.npmjs.com/package/react-paypal-button-v2
 
     // https://developer.paypal.com/docs/checkout/
     // can't just add the premade html script tags in react, must make your own
