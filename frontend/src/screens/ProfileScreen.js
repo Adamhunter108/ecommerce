@@ -143,7 +143,7 @@ function ProfileScreen({ history }) {
                     <Table striped responsive className='table-sm'>
                         <thead>
                             <tr>
-                                <th>TD</th>
+                                <th>Order ID</th>
                                 <th>Date</th>
                                 <th>Total</th>
                                 <th>Paid</th>
