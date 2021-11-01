@@ -33,10 +33,10 @@ function ProfileScreen({ history }) {
     const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
 
     useEffect(() => {
-        if(!userInfo){
+        if (!userInfo) {
             history.push('/login')
         } else {
-            if(!user || !user.name || success){
+            if (!user || !user.name || success || userInfo._id !== user._id) {
                 dispatch({ type: USER_UPDATE_PROFILE_RESET })
                 dispatch(getUserDetails('profile'))
                 dispatch(listMyOrders())
@@ -45,12 +45,12 @@ function ProfileScreen({ history }) {
                 setEmail(user.email)
             }
         }
-    }, [dispatch, history, userInfo, user,success])
+    }, [dispatch, history, userInfo, user, success])
 
 
     const submitHandler = (event) => {
         event.preventDefault()
-        if(password != confirmPassword){
+        if(password !== confirmPassword){
             setMessage('Passwords do not match')
         } else {
             // console.log('user info updating')
