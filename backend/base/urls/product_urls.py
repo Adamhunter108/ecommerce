@@ -4,5 +4,17 @@ from base.views import product_views as views
 
 urlpatterns = [
     path('', views.getProducts, name='products'),
+    path('create/', views.createProduct, name="product-create"),
+    path('upload/', views.uploadImage, name="image-upload"),
     path('<str:pk>/', views.getProduct, name='product'),
+    path('update/<str:pk>/', views.updateProduct, name="product-update"),
+    path('delete/<str:pk>/', views.deleteProduct, name="product-delete"),
 ]
+
+'''
+note: was getting errors because of the order of the URL paths:
+for the create view: one parameter confused django into thinking it was a dynamic value 
+so putting it above the actual dynamic values fixed it.
+
+note: group dynamic value url paths below hard coded ones
+'''
