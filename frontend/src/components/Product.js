@@ -18,8 +18,8 @@ function Product({ product }) {
             <Link to={`/product/${product._id}`}>
                 <Card.Img src={product.image} />
             </Link>
-
-            <Card.Body>
+            {/* <Card.ImgOverlay className="dark-overlay"> */}
+            <Card.Body className="text-center">
 
                 <Link to={`/product/${product._id}`}>
                     <Card.Title as="div">
@@ -39,7 +39,7 @@ function Product({ product }) {
                 </Card.Text>
 
             </Card.Body>
-            
+            {/* </Card.ImgOverlay> */}
         </Card>
     )
 }

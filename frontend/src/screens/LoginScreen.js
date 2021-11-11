@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Form, Button, Row, Col, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -31,8 +31,12 @@ function LoginScreen({ location, history }) {
     }
 
     return (
+        <Card 
+            className="text-center"
+            >
         <FormContainer>
-            <h1>Sign In</h1>
+        <Card.Header as="h3">Sign In</Card.Header>
+        <br />
 
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
@@ -69,13 +73,14 @@ function LoginScreen({ location, history }) {
 
             <Row className='py-3'>
                 <Col>
-                    New Customer ? <Link
+                    New customer? <Link
                     to={redirect ? `/register?redirect=${redirect}` : '/register'}
-                    >Register</Link>
+                    >Create an account</Link>
                 </Col>
             </Row>
 
         </FormContainer>
+        </Card>
     )
 }
 

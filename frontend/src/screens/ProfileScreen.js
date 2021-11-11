@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Button, Row, Col, Table } from 'react-bootstrap'
+import { Form, Button, Row, Col, Table, Card } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
@@ -63,8 +63,12 @@ function ProfileScreen({ history }) {
 
     return (
         <Row>
-            <Col md={3}>
-                <h2>Profile:</h2>
+            <Card
+            className="text-center"
+            style={{ width: '20rem' }}
+            >
+            {/* <Col md={3}> */}
+                <Card.Header as="h3">Profile</Card.Header>
                 <p>To update your profile, add or change details and hit the Update Profile button</p>
 
                 {message && <Message variant='danger'>{message}</Message>}
@@ -129,7 +133,10 @@ function ProfileScreen({ history }) {
 
                 </Form>
 
-            </Col>
+                <br />
+
+            {/* </Col> */}
+            </Card>
 
 
             <Col md={9}>

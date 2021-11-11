@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -103,8 +103,13 @@ function ProductEditScreen({ match, history }) {
                 Go Back
             </Link>
 
+            <Card 
+            className="text-center"
+            >
             <FormContainer>
-                <h1>Edit Product</h1>
+                
+                <Card.Header as="h3">Edit Product</Card.Header>
+                <br />
                 {loadingUpdate && <Loader />}
                 {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
 
@@ -209,15 +214,16 @@ function ProductEditScreen({ match, history }) {
                                 </Form.Control>
                             </Form.Group>
 
-
-                            <Button type='submit' variant='primary'>
+                            <br />
+                            <Button type='submit' variant='dark'>
                                 Update
                         </Button>
-
+                        <br /><br />
                         </Form>
                     )}
 
             </FormContainer >
+            </Card>
         </div>
 
     )
