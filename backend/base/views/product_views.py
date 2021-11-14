@@ -10,7 +10,19 @@ from rest_framework import status
 
 @api_view(['GET'])
 def getProducts(request):
-    products = Product.objects.all()
+    # adding search functionality
+    query = request.query_params.get('keyword')
+    print('query', query)
+    if query == None:
+        query = ''
+
+    # https://docs.djangoproject.com/en/3.2/topics/db/search/
+    # https://docs.djangoproject.com/en/3.2/ref/models/querysets/#std:fieldlookup-icontains
+    # name__icontains makes the search case insensitive
+    products = Product.objects.filter(
+        name__icontains=query)
+
+    # products = Product.objects.all()
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 

@@ -5,6 +5,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import SearchBox from '../components/SearchBox'
 import { listProducts } from '../actions/productActions'
 
 // import axios from 'axios'
@@ -23,7 +24,7 @@ import { listProducts } from '../actions/productActions'
 // axios docs
 // https://axios-http.com/
 
-function HomeScreen() {
+function HomeScreen({history}) {
 
     // const [products, setProducts] = useState([])
     // local state not needed anymore
@@ -57,15 +58,21 @@ function HomeScreen() {
 
     const {error, loading, products} = productList
 
+    let keyword = history.location.search
+    console.log(keyword)
+
     useEffect(() => {
-        dispatch(listProducts())
-    }, [dispatch])
+        dispatch(listProducts(keyword))
+    }, [dispatch, keyword])
 
     // const products = []
     // solved no products error
 
     return (
         <div>
+
+            {/* <SearchBox /> */}
+
             <h1>Latest Products</h1>
 
             {loading ? <Loader />
