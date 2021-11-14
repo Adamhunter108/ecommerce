@@ -139,8 +139,11 @@ function ProfileScreen({ history }) {
             </Card>
 
 
-            <Col md={9}>
-                <h2>Orders</h2>
+            <Col md={6}>
+                <Card>
+            
+                {/* <h2>Orders</h2> */}
+                <Card.Header as="h3">Orders</Card.Header>
                 {loadingOrders ? (
                     <Loader/>
 
@@ -172,7 +175,7 @@ function ProfileScreen({ history }) {
                                     )}</td>
                                     <td>
                                         <LinkContainer to={`/order/${order._id}`}>
-                                            <Button className='btn-sm'>Details</Button>
+                                            <Button variant='dark' className='btn-sm'>Details</Button>
                                         </LinkContainer>
                                     </td>
                                 </tr>
@@ -182,6 +185,7 @@ function ProfileScreen({ history }) {
 
                     </Table>
                 )}
+            </Card>
             </Col>
         </Row>
     )

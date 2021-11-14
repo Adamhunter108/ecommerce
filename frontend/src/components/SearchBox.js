@@ -26,6 +26,7 @@ function SearchBox() {
                         onChange={(event) => setKeyword(event.target.value)}
                         className='mr-sm-2 ml-sm-5'
                     ></Form.Control>
+                    
                 </Col>
 
                 {/* <Col>
@@ -38,7 +39,8 @@ function SearchBox() {
                         variant='outline-warning'
                         
                     >
-                        Submit
+                        {/* Submit */}
+                        <i className="fas fa-search"></i>
                     </Button>
                 </Col>
             </Row>

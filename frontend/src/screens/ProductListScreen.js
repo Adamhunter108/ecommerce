@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button, Row, Col } from 'react-bootstrap'
+import { Table, Button, Row, Col, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -55,16 +55,20 @@ function ProductListScreen({ history, match }) {
 
     return (
         <div>
+            <Card>
             <Row className='align-items-center'>
-                <Col>
+                {/* <Col>
                     <h1>Products</h1>
-                </Col>
+                </Col> */}
 
-                <Col className='text-right'>
-                    <Button className='my-3' onClick={createProductHandler}>
+                <Card.Header as="h3">Products
+                </Card.Header>
+
+                {/* <Col className='text-right'>
+                    <Button variant='dark' className='my-3' onClick={createProductHandler}>
                         <i className='fas fa-plus'></i> Create Product
                     </Button>
-                </Col>
+                </Col> */}
             </Row>
 
             {loadingDelete && <Loader />}
@@ -103,7 +107,7 @@ function ProductListScreen({ history, match }) {
 
                                             <td>
                                                 <LinkContainer to={`/admin/product/${product._id}/edit`}>
-                                                    <Button variant='light' className='btn-sm'>
+                                                    <Button variant='dark' className='btn-sm'>
                                                         <i className='fas fa-edit'></i>
                                                     </Button>
                                                 </LinkContainer>
@@ -119,6 +123,13 @@ function ProductListScreen({ history, match }) {
                             <Paginate pages={pages} page={page} isAdmin={true} />
                         </div>
                     )}
+
+
+                    <Button variant='dark' className='my-3' onClick={createProductHandler}>
+                        <i className='fas fa-plus'></i> Create Product
+                    </Button>
+                
+        </Card>
         </div>
     )
 }

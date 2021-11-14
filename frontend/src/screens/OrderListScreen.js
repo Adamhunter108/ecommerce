@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -30,7 +30,9 @@ function OrderListScreen({ history }) {
 
     return (
         <div>
-            <h1>Orders</h1>
+            <Card>
+            {/* <h1>Orders</h1> */}
+            <Card.Header as="h3">Orders</Card.Header>
             {loading
                 ? (<Loader />)
                 : error
@@ -73,7 +75,7 @@ function OrderListScreen({ history }) {
 
                                         <td>
                                             <LinkContainer to={`/order/${order._id}`}>
-                                                <Button variant='light' className='btn-sm'>
+                                                <Button variant='dark' className='btn-sm'>
                                                     Details
                                                 </Button>
                                             </LinkContainer>
@@ -85,6 +87,7 @@ function OrderListScreen({ history }) {
                             </tbody>
                         </Table>
                     )}
+            </Card>
         </div>
     )
 }

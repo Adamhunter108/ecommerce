@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -41,7 +41,9 @@ function UserListScreen({ history }) {
 
     return (
         <div>
-            <h1>Users</h1>
+            <Card>
+            {/* <h1>Users</h1> */}
+            <Card.Header as="h3">Users</Card.Header>
             {loading
                 ? (<Loader />)
                 : error
@@ -72,11 +74,11 @@ function UserListScreen({ history }) {
 
                                         <td>
                                             <LinkContainer to={`/admin/user/${user._id}/edit/`}>
-                                                <Button variant='light' className='btn-sm'>
+                                                <Button variant='dark' className='btn-sm'>
                                                     <i className='fas fa-edit'></i>
                                                 </Button>
                                             </LinkContainer>
-                                            <p></p>
+                                            {/* <p></p> */}
                                             <Button variant='danger' className='btn-sm' onClick={() => deleteHandler(user._id)}>
                                                 <i className='fas fa-trash'></i>
                                             </Button>
@@ -86,6 +88,7 @@ function UserListScreen({ history }) {
                             </tbody>
                         </Table>
                     )}
+            </Card>
         </div>
     )
 }
