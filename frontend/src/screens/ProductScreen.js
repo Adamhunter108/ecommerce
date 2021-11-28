@@ -103,14 +103,16 @@ function ProductScreen({ match, history }) {
                 :(
                     <div>
                         <Row>
-                            <Col md={6}>
+                            <Col md={4}>
                                 <Image src={product.image} alt={product.name} fluid rounded />
                             </Col>
 
                             <Col md={3}>
+                                {/* <Card> */}
                                 <ListGroup variant="flush">
                                     <ListGroup.Item>
-                                        <h3>{product.name}</h3>
+                                        {/* <h3>{product.name}</h3> */}
+                                        <Card.Header as="h3">{product.name}</Card.Header>
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
@@ -122,9 +124,11 @@ function ProductScreen({ match, history }) {
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
-                                        Description: {product.description}
+                                        {/* Description:  */}
+                                        {product.description}
                                     </ListGroup.Item>
                                 </ListGroup>
+                                {/* </Card> */}
                             </Col>
 
                             <Col md={3}>

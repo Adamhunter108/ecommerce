@@ -154,10 +154,10 @@ function ProfileScreen({ history }) {
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th>Date</th>
+                                <th>Date Placed</th>
                                 <th>Total</th>
-                                <th>Paid</th>
-                                <th>Delivered</th>
+                                <th>Paid On</th>
+                                {/* <th>Delivered</th> */}
                                 <th></th>
                             </tr>
                         </thead>
