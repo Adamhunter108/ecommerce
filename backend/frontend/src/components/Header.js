@@ -43,7 +43,7 @@ function Header() {
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className="ml-auto">
 
                         {/* icons imported from font-awesome library which is imported in index.html */}
                         {/* <Nav.Link href="/cart"><i className="fas fa-shopping-cart"></i> Cart</Nav.Link> */}
