@@ -74,7 +74,6 @@ function HomeScreen({history}) {
         <div>
 
             {/* <SearchBox /> */}
-
             
             {!keyword && 
                 <Card>
