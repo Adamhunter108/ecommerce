@@ -26,6 +26,7 @@ function ProductListScreen({ history, match }) {
     const { userInfo } = userLogin
 
     let keyword = history.location.search
+    
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
 

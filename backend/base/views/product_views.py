@@ -30,7 +30,7 @@ def getProducts(request):
 
     # https://docs.djangoproject.com/en/3.2/topics/pagination/
     page = request.query_params.get('page')
-    paginator = Paginator(products, 5)
+    paginator = Paginator(products, 4)
 
     try:
         products = paginator.page(page)
@@ -47,6 +47,15 @@ def getProducts(request):
     serializer = ProductSerializer(products, many=True)
 
     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
+
+
+@api_view(['GET'])
+def getTopProducts(request):
+    products = Product.objects.filter(rating__gte=4).order_by('-rating')[0:5]
+    # filtering products by rating Greatter Than or Equal to 4. ordered by rating starting at 5 and going backwards and then only returning 0 thriugh 5 so top 5 products
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
 
 @api_view(['GET'])
 def getProduct(request, pk):

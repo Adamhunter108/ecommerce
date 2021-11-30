@@ -1,12 +1,13 @@
 // import React, { useState, useEffect } from 'react'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import SearchBox from '../components/SearchBox'
 import Paginate from '../components/Paginate'
+import ProductCarousel from '../components/ProductCarousel'
 import { listProducts } from '../actions/productActions'
 
 // import axios from 'axios'
@@ -74,7 +75,18 @@ function HomeScreen({history}) {
 
             {/* <SearchBox /> */}
 
-            <h1>Latest Products</h1>
+            
+            {!keyword && 
+                <Card>
+                    <Card.Header as="h3">Products with the most <i class="fas fa-star"></i>'s</Card.Header>
+                    <ProductCarousel />
+                </Card>
+                }
+            {/* if no keyword, output carousel condition kills the carousel if using the searchbox  */}
+            {/* put on a card for the title */}
+
+            {/* <br /><br />
+            <h3>Latest Products</h3> */}
 
             {loading ? <Loader />
                 : error ? <Message variant='danger'>{error}</Message>

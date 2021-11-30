@@ -8,7 +8,7 @@ function Paginate({ pages, page, keyword = '', isAdmin = false }) {
     }
 
     return (pages > 1 && (
-        <Pagination size='sm'>
+        <Pagination>
             {[...Array(pages).keys()].map((x) => (
                 <LinkContainer
                     key={x + 1}
@@ -20,6 +20,7 @@ function Paginate({ pages, page, keyword = '', isAdmin = false }) {
                     <Pagination.Item active={x + 1 === page}>{x + 1}</Pagination.Item>
                 </LinkContainer>
             ))}
+            {/* <Pagination.Ellipsis /> */}
         </Pagination>
     )
     )
