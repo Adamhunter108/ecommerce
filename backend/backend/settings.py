@@ -129,12 +129,32 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# switching to PostgreSQL
+# https://docs.djangoproject.com/en/3.2/ref/databases/#postgresql-notes
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': '36chambers',
+       'USER': 'postgres',
+        # 'PASSWORD': os.environ.get('DB_PASS'),
+        'PASSWORD': '<--fill this in -->',
+    #    'HOST': os.environ.get('HOST'),
+        'HOST': 'localhost',
+       'PORT': '5432'
+   }
 }
+
+
+
 
 
 # Password validation
