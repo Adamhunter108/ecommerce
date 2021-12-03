@@ -143,12 +143,14 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': '36chambers',
+    #    'NAME': '36chambers',
+        'NAME': 'thirtysixchambers',
        'USER': 'postgres',
         # 'PASSWORD': os.environ.get('DB_PASS'),
         'PASSWORD': '<--fill this in -->',
     #    'HOST': os.environ.get('HOST'),
-        'HOST': 'localhost',
+        # 'HOST': 'localhost',
+        'HOST': '<--fill this in -->',
        'PORT': '5432'
    }
 }
