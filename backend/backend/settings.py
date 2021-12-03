@@ -25,7 +25,7 @@ SECRET_KEY = '7p2xcg3dg4oj40692@^=t+ywl3pm2$ks450_*sus*(1p5tm2(6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thirtysixchambers.herokuapp.com/']
 
 
 # Application definition
@@ -40,7 +40,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'storages',
     'base.apps.BaseConfig',
+    
 ]
 
 
@@ -95,6 +97,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,14 +148,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-    #    'NAME': '36chambers',
+        # 'NAME': '36chambers',
+        # that was the local postreg db, AWS required nonnumeric first char
         'NAME': 'thirtysixchambers',
-       'USER': 'postgres',
-        # 'PASSWORD': os.environ.get('DB_PASS'),
-        'PASSWORD': '<--fill this in -->',
-    #    'HOST': os.environ.get('HOST'),
+        'USER': 'postgres',
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('HOST'),
         # 'HOST': 'localhost',
-        'HOST': '<--fill this in -->',
        'PORT': '5432'
    }
 }
@@ -205,7 +209,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = 'static/images'
-
+STATIC_ROOT = 'staticfiles'
 
 # CORS_ALLOW_ALL_ORIGINS = True
 
@@ -213,3 +217,25 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
 
+
+# https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_S3_ACCESS_KEY_ID')
+
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = 'thirtysixchambers'
+
+AWS_QUERYSTRING_AUTH = False
+# Setting AWS_QUERYSTRING_AUTH to False to remove query parameter authentication from generated URLs. 
+# This can be useful if your S3 buckets are public.
+
+# AWS_S3_SIGNATURE_VERSION = 's3'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+
+# if os.GetCurrentWorkingDirectory is live, set debug to False for production
+if os.getcwd() == '/app':
+    DEBUG = False
