@@ -1,8 +1,33 @@
 # ecommerce 📦
  
+
 ### `About:`
 A full-stack, fully functional e-commerce website. 
-The backend features Django which is responsible for managing users, products, orders, and for communicating with the database.  Django REST framework is being used to build, customize and serve an API for the frontend to communicate with.  The frontend features React for the user interface, Bootstrap for UI styling and Redux for state management.  
+
+The website features registration ability for users to make an account, place orders, pay for orders with PayPal (or credit card), and a user profile section where user information can be added/updated and the status and info on orders can be viewed.  The frontend also features admin abilities to manage users, products and orders.
+
+This is a Django web-app.  Django REST framework is being used to build, customize and serve an API for the frontend to communicate with.  The frontend features React for the user interface, Bootstrap for UI styling and Redux for state management. 
+
+The `main` git branch uses an SQLite database for ease of running the project locally. The `postgres` branch is using a live PostgreSQL database hosted on AWS.  The images on the `postgres` branch are hosted on AWS as well via S3 buckets and the entire branch is deployed live via Heroku.
+
+### `View Live:`
+[thirtysixchambers.herokuapp.com](https://thirtysixchambers.herokuapp.com/)
+
+### `Tech Stack:`
+
+`Frontend:`
+| JavaScipt | Node.js | React | Redux | Bootstrap |
+| :----: | :----: | :----: | :----: | :----: | 
+| <img src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/redux.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" width="50" height="50"/> |  
+
+`Backend:`
+| Python | Django | PostgreSQL | SQLite |
+| :----: | :----: | :----: | :----: | 
+| <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/django.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/sqlite.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" width="50" height="50"/> |
+
+| AWS | Heroku |
+| :----: | :----: | 
+| <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/heroku-4.svg" width="50" height="50"/> |
 
 ### `Run Locally:`
 ---
@@ -25,7 +50,3 @@ Don't need anymore bc of merged project -->
 * Start the backend Django server: <br>
 `python manage.py runserver`
 
-### `Tech Stack:`
-| Python | Django | JavaScipt | Node.js | React | Redux | Bootstrap | PostgreSQL | SQLite |
-| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/django.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/redux.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/sqlite.svg" width="50" height="50"/> |
