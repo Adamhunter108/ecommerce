@@ -4,7 +4,7 @@
 ### `About:`
 A full-stack, fully functional e-commerce website. 
 
-The website features registration ability for users to make an account, place orders, pay for orders with PayPal (or credit card), and a user profile section where user information can be added/updated and the status and info on orders can be viewed.  The frontend also features admin abilities to manage users, products and orders.
+The website features account registration and login functionality.  Once a user is logged in they can place orders, pay for orders with PayPal (or credit card), and access a user profile screen where account information can be added or changed and a table of orders and order status can be viewed. The frontend also features admin abilities to manage users, products and orders.
 
 This is a Django web-app.  Django REST framework is being used to build, customize and serve an API for the frontend to communicate with.  The frontend features React for the user interface, Bootstrap for UI styling and Redux for state management. 
 
