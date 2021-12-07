@@ -47,6 +47,8 @@ Don't need anymore bc of merged project -->
 `c:\>c:\Python35\python -m venv c:\path\to\venv` (if on Windows) <br>
 * Install dependencies: <br>
 `pip install -r requirements.txt` <br>
+*  Migrate to the SQLite database:<br>
+`python manage.py migrate`
 * Start the backend Django server: <br>
 `python manage.py runserver`
 
