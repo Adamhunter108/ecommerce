@@ -159,6 +159,7 @@ DATABASES = {
    }
 }
 
+# HOST is AWS endpoint
 
 
 

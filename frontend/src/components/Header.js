@@ -85,7 +85,7 @@ function Header() {
                                     </LinkContainer>
 
                                     <LinkContainer to='/admin/productlist'>
-                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                        <NavDropdown.Item><i class="fas fa-clipboard-list"></i> Products</NavDropdown.Item>
                                     </LinkContainer>
 
                                     <LinkContainer to='/admin/orderlist'>
