@@ -159,6 +159,7 @@ DATABASES = {
    }
 }
 
+# using environment variables
 # HOST is AWS endpoint
 
 
