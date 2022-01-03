@@ -75,12 +75,13 @@ function HomeScreen({history}) {
 
             {/* <SearchBox /> */}
             
-            {!keyword && 
+            {/* cutting the carousel for now */}
+            {/* {!keyword && 
                 <Card>
                     <Card.Header as="h3">Products with the most <i class="fas fa-star"></i>'s</Card.Header>
                     <ProductCarousel />
                 </Card>
-                }
+                } */}
             {/* if no keyword, output carousel condition kills the carousel if using the searchbox  */}
             {/* put on a card for the title */}
 

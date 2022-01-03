@@ -60,10 +60,10 @@ function Header() {
                             <NavDropdown title={'Welcome, ' + userInfo.name} id='username'>
 
                                 <LinkContainer to='/profile'>
-                                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                                    <NavDropdown.Item><i class="fas fa-address-card"></i> Profile</NavDropdown.Item>
                                 </LinkContainer>
 
-                                <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                                <NavDropdown.Item onClick={logoutHandler}><i class="fas fa-sign-out-alt"></i> Logout</NavDropdown.Item>
 
                             </NavDropdown>
                         ): (
@@ -81,15 +81,15 @@ function Header() {
                         {userInfo && userInfo.isAdmin && (
                                 <NavDropdown title='Admin' id='adminmenue'>
                                     <LinkContainer to='/admin/userlist'>
-                                        <NavDropdown.Item>Users</NavDropdown.Item>
+                                        <NavDropdown.Item><i class="fas fa-users"></i> Users</NavDropdown.Item>
                                     </LinkContainer>
 
                                     <LinkContainer to='/admin/productlist'>
-                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                        <NavDropdown.Item><i class="fas fa-boxes"></i> Products</NavDropdown.Item>
                                     </LinkContainer>
 
                                     <LinkContainer to='/admin/orderlist'>
-                                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                                        <NavDropdown.Item><i class="fas fa-clipboard-list"></i> Orders</NavDropdown.Item>
                                     </LinkContainer>
 
                                 </NavDropdown>
