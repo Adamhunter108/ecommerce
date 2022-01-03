@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -241,3 +242,6 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 # if os.GetCurrentWorkingDirectory is live, set debug to False for production
 if os.getcwd() == '/app':
     DEBUG = False
+
+# Activate Django-Heroku.
+django_heroku.settings(locals()) 
