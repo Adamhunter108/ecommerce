@@ -62,7 +62,7 @@ function ProductListScreen({ history, match }) {
                     <h1>Products</h1>
                 </Col> */}
 
-                <Card.Header as="h3">Products
+                <Card.Header as="h3"><i class="fas fa-clipboard-list"></i> Products
                 </Card.Header>
 
                 {/* <Col className='text-right'>

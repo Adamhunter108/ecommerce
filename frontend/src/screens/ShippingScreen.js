@@ -30,12 +30,12 @@ function ShippingScreen({ history }) {
 
             <CheckoutSteps step1 step2 />
 
-            <h1>Shipping</h1>
+            <h1><i class="fas fa-shipping-fast"></i> Shipping</h1>
 
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='address'>
-                    <Form.Label>Address</Form.Label>
+                    <Form.Label><i class="fas fa-map-marked-alt"></i> Address</Form.Label>
                         <Form.Control
                             required
                             type='text'
@@ -50,7 +50,7 @@ function ShippingScreen({ history }) {
                 <br />
 
                 <Form.Group controlId='city'>
-                    <Form.Label>City</Form.Label>
+                    <Form.Label><i class="fas fa-city"></i> City</Form.Label>
                         <Form.Control
                             required
                             type='text'
@@ -64,7 +64,7 @@ function ShippingScreen({ history }) {
                 <br />
                 
                 <Form.Group controlId='postalCode'>
-                    <Form.Label>State</Form.Label>
+                    <Form.Label><i class="fas fa-map-signs"></i> State</Form.Label>
                         <Form.Control
                             required
                             type='text'
@@ -78,7 +78,7 @@ function ShippingScreen({ history }) {
                 <br />
 
                 <Form.Group controlId='postalCode'>
-                    <Form.Label>Zip Code</Form.Label>
+                    <Form.Label><i class="fas fa-map-pin"></i> Zip Code</Form.Label>
                         <Form.Control
                             required
                             type='text'
@@ -92,7 +92,7 @@ function ShippingScreen({ history }) {
                 <br />
 
                 <Form.Group controlId='country'>
-                    <Form.Label>Country</Form.Label>
+                    <Form.Label><i class="fas fa-flag-usa"></i> Country</Form.Label>
                         <Form.Control
                             required
                             type='text'

@@ -43,7 +43,7 @@ function CartScreen({ match, location, history }) {
 
         <Row>
             <Col md={8}>
-                <h1>ready to check out?</h1>
+                <h1><i class="fas fa-shopping-cart"></i> ready to check out?</h1>
 
                 {cartItems.length === 0 ? (
                     <Message variant='dark'>

@@ -68,8 +68,8 @@ function ProfileScreen({ history }) {
             style={{ width: '20rem' }}
             >
             {/* <Col md={3}> */}
-                <Card.Header as="h3">Profile</Card.Header>
-                <p>To update your profile, add or change details and hit the Update Profile button</p>
+                <Card.Header as="h3"><i class="fas fa-address-card"></i> Profile</Card.Header>
+                <p></p>
 
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
@@ -78,7 +78,7 @@ function ProfileScreen({ history }) {
                 <Form onSubmit={submitHandler}>
                 
                     <Form.Group controlId='name'>
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label><i className="fas fa-user"></i> Name</Form.Label>
                             <Form.Control
                                 required
                                 type='name'
@@ -91,7 +91,7 @@ function ProfileScreen({ history }) {
                     <br />
 
                     <Form.Group controlId='email'>
-                        <Form.Label>Email Address</Form.Label>
+                        <Form.Label><i class="fas fa-envelope"></i> Email Address</Form.Label>
                             <Form.Control
                                 required
                                 type='email'
@@ -104,7 +104,7 @@ function ProfileScreen({ history }) {
                     <br />
 
                     <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label><i class="fas fa-key"></i> Password</Form.Label>
                         <Form.Control
                             
                             type='password'
@@ -117,7 +117,7 @@ function ProfileScreen({ history }) {
                     <br />
 
                     <Form.Group controlId='passwordConfirm'>
-                        <Form.Label>Confirm Password</Form.Label>
+                        <Form.Label><i class="fas fa-key"></i> Confirm Password</Form.Label>
                         <Form.Control
                             
                             type='password'
@@ -143,7 +143,7 @@ function ProfileScreen({ history }) {
                 <Card>
             
                 {/* <h2>Orders</h2> */}
-                <Card.Header as="h3">Orders</Card.Header>
+                <Card.Header as="h3"><i class="fas fa-boxes"></i> Orders</Card.Header>
                 {loadingOrders ? (
                     <Loader/>
 

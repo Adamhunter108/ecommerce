@@ -96,7 +96,7 @@ function OrderScreen({ match, history }) {
                     <ListGroup variant='flush'>
 
                         <ListGroup.Item>
-                            <h2>Shipping</h2>
+                            <h2><i class="fas fa-shipping-fast"></i> Shipping</h2>
                             <p><strong>Name: </strong>{order.user.name}</p>
                             <p><strong>Email: </strong><a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
 
@@ -118,7 +118,7 @@ function OrderScreen({ match, history }) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Payment Method</h2>
+                            <h2><i class="fas fa-cash-register"></i> Payment Method</h2>
                             <p>
                                 <strong>Method: </strong>
                                 {order.paymentMethod}
@@ -133,7 +133,7 @@ function OrderScreen({ match, history }) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Order Items</h2>
+                            <h2><i class="fas fa-boxes"></i> Order Items</h2>
 
                             {order.orderItems.length === 0 ? <Message variant='info'>Order is empty</Message> : (
                                 <ListGroup variant='flush'>
@@ -164,7 +164,7 @@ function OrderScreen({ match, history }) {
                     <Card>
                         <ListGroup variant='flush'>
                             <ListGroup.Item>
-                                <h2>Order Summary</h2>
+                                <h2><i class="fas fa-receipt"></i> Order Summary</h2>
                             </ListGroup.Item>
 
                             <ListGroup.Item>

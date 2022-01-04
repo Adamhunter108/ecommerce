@@ -89,7 +89,7 @@ function Header() {
                                     </LinkContainer>
 
                                     <LinkContainer to='/admin/orderlist'>
-                                        <NavDropdown.Item><i class="fas fa-users"></i> Orders</NavDropdown.Item>
+                                        <NavDropdown.Item><i class="fas fa-boxes"></i> Orders</NavDropdown.Item>
                                     </LinkContainer>
 
                                 </NavDropdown>

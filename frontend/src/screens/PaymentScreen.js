@@ -33,9 +33,10 @@ function PaymentScreen({ history }) {
 
                 <Form.Group>
                     <Form.Label as='legend'>
-                        Select Method of Payment
+                    <i class="fas fa-cash-register"></i> Select Method of Payment
                     </Form.Label>
                     <Col>
+                    <h1><i class="fab fa-paypal"></i></h1>
                         <Form.Check 
                             type='radio'
                             label='PayPal or Credit Card' 

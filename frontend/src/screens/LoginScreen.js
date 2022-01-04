@@ -35,7 +35,7 @@ function LoginScreen({ location, history }) {
             className="text-center"
             >
         <FormContainer>
-        <Card.Header as="h3">Sign In</Card.Header>
+        <Card.Header as="h3"><i class="fas fa-user-circle"></i> Sign In</Card.Header>
         <br />
 
             {error && <Message variant='danger'>{error}</Message>}
@@ -44,7 +44,7 @@ function LoginScreen({ location, history }) {
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label><i class="fas fa-envelope"></i> Email Address</Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Enter Email'
@@ -56,7 +56,7 @@ function LoginScreen({ location, history }) {
                 <br />
 
                 <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label><i class="fas fa-key"></i> Password</Form.Label>
                     <Form.Control
                         type='password'
                         placeholder='Enter Password'

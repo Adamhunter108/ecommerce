@@ -51,6 +51,10 @@ function PlaceOrderScreen({ history }) {
         }))
     }
 
+    const userLogin = useSelector(state => state.userLogin)
+    // destruct what is coming from the store to just grab userInfo
+    const { userInfo } = userLogin 
+
     return (
         <div>
             <CheckoutSteps step1 step2 step3 step4 />
@@ -60,9 +64,11 @@ function PlaceOrderScreen({ history }) {
                     <ListGroup variant='flush'>
 
                         <ListGroup.Item>
-                            <h2>Shipping</h2>
+                            <h2><i class="fas fa-shipping-fast"></i> Shipping</h2>
                             <p>
-                                <strong>Shipping: </strong>
+                                {/* <strong>Shipping: </strong> */}
+                                {userInfo.name},
+                                {'  '} 
                                 {cart.shippingAddress.address},
                                 {'  '}
                                 {cart.shippingAddress.city}, 
@@ -72,7 +78,7 @@ function PlaceOrderScreen({ history }) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Payment Method</h2>
+                            <h2><i class="fas fa-cash-register"></i> Payment Method</h2>
                             <p>
                                 <strong>Method: </strong>
                                 {cart.paymentMethod}
@@ -80,7 +86,7 @@ function PlaceOrderScreen({ history }) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <h2>Order Items</h2>
+                            <h2><i class="fas fa-boxes"></i> Order Items</h2>
 
                             {cart.cartItems.length === 0 ? <Message variant='info'>Your cart is empty</Message> : (
                                 <ListGroup variant='flush'>
@@ -111,7 +117,7 @@ function PlaceOrderScreen({ history }) {
                     <Card>
                         <ListGroup variant='flush'>
                             <ListGroup.Item>
-                                <h2>Order Summary</h2>
+                                <h2><i class="fas fa-receipt"></i> Order Summary</h2>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
@@ -146,6 +152,7 @@ function PlaceOrderScreen({ history }) {
                                 {error && <Message variant='danger'>{error}</Message>}
                             </ListGroup.Item> 
 
+                            
                             <ListGroup.Item>
                                 <Button 
                                     type='button'

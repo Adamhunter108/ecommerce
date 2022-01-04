@@ -43,7 +43,7 @@ function UserListScreen({ history }) {
         <div>
             <Card>
             {/* <h1>Users</h1> */}
-            <Card.Header as="h3">Users</Card.Header>
+            <Card.Header as="h3"><i class="fas fa-users"></i> Users</Card.Header>
             {loading
                 ? (<Loader />)
                 : error

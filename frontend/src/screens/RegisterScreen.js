@@ -45,7 +45,7 @@ function RegisterScreen({ location, history }) {
             className="text-center"
             >
         <FormContainer>
-            <Card.Header as="h3">Create An Account</Card.Header>
+            <Card.Header as="h3"><i class="fas fa-user-circle"></i> Create An Account</Card.Header>
             <br />
 
             {message && <Message variant='danger'>{message}</Message>}
@@ -55,7 +55,7 @@ function RegisterScreen({ location, history }) {
             <Form onSubmit={submitHandler}>
             
                 <Form.Group controlId='name'>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label><i className="fas fa-user"></i> Name</Form.Label>
                         <Form.Control
                             required
                             type='name'
@@ -68,7 +68,7 @@ function RegisterScreen({ location, history }) {
                 <br />
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label><i class="fas fa-envelope"></i> Email Address</Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -81,7 +81,7 @@ function RegisterScreen({ location, history }) {
                 <br />
 
                 <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label><i class="fas fa-key"></i> Password</Form.Label>
                     <Form.Control
                         required
                         type='password'
@@ -94,7 +94,7 @@ function RegisterScreen({ location, history }) {
                 <br />
 
                 <Form.Group controlId='passwordConfirm'>
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label><i class="fas fa-key"></i> Confirm Password</Form.Label>
                     <Form.Control
                         required
                         type='password'

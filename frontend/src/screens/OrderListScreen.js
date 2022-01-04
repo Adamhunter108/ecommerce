@@ -32,7 +32,7 @@ function OrderListScreen({ history }) {
         <div>
             <Card>
             {/* <h1>Orders</h1> */}
-            <Card.Header as="h3">Orders</Card.Header>
+            <Card.Header as="h3"><i class="fas fa-boxes"></i> Orders</Card.Header>
             {loading
                 ? (<Loader />)
                 : error
