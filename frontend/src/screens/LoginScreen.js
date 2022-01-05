@@ -6,6 +6,12 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { login } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import { styled } from '@mui/material/styles';
+
 
 function LoginScreen({ location, history }) {
     const [email, setEmail] = useState('')
@@ -30,6 +36,49 @@ function LoginScreen({ location, history }) {
         dispatch(login(email, password))
     }
 
+    // this is how you make custom styled textfields with MUI
+    // const CssTextField = styled(TextField)({
+    //     '& label.Mui-focused': {
+    //       color: 'green',
+    //     },
+    //     '& .MuiInput-underline:after': {
+    //       borderBottomColor: 'green',
+    //     },
+    //     '& .MuiOutlinedInput-root': {
+    //       '& fieldset': {
+    //         borderColor: 'red',
+    //       },
+    //       '&:hover fieldset': {
+    //         borderColor: 'yellow',
+    //       },
+    //       '&.Mui-focused fieldset': {
+    //         borderColor: 'green',
+    //       },
+    //     },
+    //   });
+
+    //   const EmailTextField = styled(TextField)({
+    //     '& label.Mui-focused': {
+    //       color: 'white',
+    //     },
+    //     '& .MuiInput-underline:after': {
+    //       borderBottomColor: 'white',
+    //     },
+    //     '& .MuiOutlinedInput-root': {
+    //       '& fieldset': {
+    //         borderColor: 'red',
+    //       },
+    //       '&:hover fieldset': {
+    //         borderColor: 'yellow',
+    //       },
+    //       '&.Mui-focused fieldset': {
+    //         borderColor: 'white',
+    //       },
+    //     },
+    //   });
+
+
+
     return (
         <Card 
             className="text-center"
@@ -43,7 +92,43 @@ function LoginScreen({ location, history }) {
 
             <Form onSubmit={submitHandler}>
 
-                <Form.Group controlId='email'>
+        {/* playing with MUI inputs */}
+            <TextField
+                sx={{ input: { color: 'white', borderColor: 'white' } }}
+                id="email" 
+                label="Email" 
+                variant="outlined" 
+                color="warning"
+                fullWidth
+                // InputProps={{
+                //     startAdornment: (
+                //       <InputAdornment position="start">
+                //         <AccountCircle />
+                //       </InputAdornment>
+                //     ),
+                //   }}
+                onChange={(event) => setEmail(event.target.value)} />
+            <br /><br />
+
+            <TextField
+                sx={{ input: { color: 'white' } }}
+                id="password"
+                type='password' 
+                label="Password" 
+                variant="outlined" 
+                color="warning"
+                fullWidth
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <VpnKeyIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                onChange={(event) => setPassword(event.target.value)} />
+
+
+                {/* <Form.Group controlId='email'>
                     <Form.Label><i class="fas fa-envelope"></i> Email Address</Form.Label>
                     <Form.Control
                         type='email'
@@ -52,10 +137,10 @@ function LoginScreen({ location, history }) {
                         onChange={(event) => setEmail(event.target.value)}
                     >
                     </Form.Control>
-                </Form.Group>
+                </Form.Group> */}
                 <br />
 
-                <Form.Group controlId='password'>
+                {/* <Form.Group controlId='password'>
                     <Form.Label><i class="fas fa-key"></i> Password</Form.Label>
                     <Form.Control
                         type='password'
@@ -64,7 +149,7 @@ function LoginScreen({ location, history }) {
                         onChange={(event) => setPassword(event.target.value)}
                     >
                     </Form.Control>
-                </Form.Group>
+                </Form.Group> */}
                 <br />
 
                 <Button type='submit' variant='dark'>Sign in</Button>
