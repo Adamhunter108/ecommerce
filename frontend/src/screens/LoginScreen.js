@@ -57,25 +57,50 @@ function LoginScreen({ location, history }) {
     //     },
     //   });
 
-    //   const EmailTextField = styled(TextField)({
-    //     '& label.Mui-focused': {
-    //       color: 'white',
-    //     },
-    //     '& .MuiInput-underline:after': {
-    //       borderBottomColor: 'white',
-    //     },
-    //     '& .MuiOutlinedInput-root': {
-    //       '& fieldset': {
-    //         borderColor: 'red',
-    //       },
-    //       '&:hover fieldset': {
-    //         borderColor: 'yellow',
-    //       },
-    //       '&.Mui-focused fieldset': {
-    //         borderColor: 'white',
-    //       },
-    //     },
-    //   });
+
+    // when the below TextField styles are used the forms break... why?
+
+      const EmailTextField = styled(TextField)({
+        '& label.Mui-focused': {
+          color: 'white',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: 'white',
+        },
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'white',
+          },
+          '&:hover fieldset': {
+            borderColor: 'white',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'white',
+          },
+        },
+      });
+
+
+      const PasswordTextField = styled(TextField)({
+        '& label.Mui-focused': {
+          color: 'white',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: 'white',
+        },
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'white',
+          },
+          '&:hover fieldset': {
+            borderColor: 'white',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'white',
+          },
+        },
+      });
+
 
 
 
@@ -98,7 +123,7 @@ function LoginScreen({ location, history }) {
                 id="email" 
                 label="Email" 
                 variant="outlined" 
-                color="warning"
+                color="info"
                 fullWidth
                 // InputProps={{
                 //     startAdornment: (
@@ -116,7 +141,7 @@ function LoginScreen({ location, history }) {
                 type='password' 
                 label="Password" 
                 variant="outlined" 
-                color="warning"
+                color="secondary"
                 fullWidth
                 InputProps={{
                     startAdornment: (
