@@ -67,6 +67,9 @@ $ # If on Mac or Linux
 $  source venv/bin/activate
 $ # If on Windows
 $ c:\>c:\Python35\python -m venv c:\path\to\venv
+$
+$ # Install dependencies
+$ pip install -r requirements.txt
 $ 
 $ # Connect to SQLite database
 $ python manage.py migrate
