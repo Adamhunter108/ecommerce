@@ -54,7 +54,11 @@ Don't need anymore bc of merged project -->
 * Start the backend Django server: <br>
 `python manage.py runserver` -->
 
+After downloading or cloing into this repository:
 ```bash
+$ # Change into the backend directory 
+$ cd backend
+$
 $ # Create virtual environment
 $ virtualenv venv
 $ 
