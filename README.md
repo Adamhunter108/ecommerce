@@ -40,7 +40,9 @@ The `main` git branch uses an SQLite database for ease of running the project lo
 * Start frontend Node.js server:<br> `npm start` <br>
 #### `Backend:` <br>
 Don't need anymore bc of merged project -->
-* In root directory of `backend`, create a virtual environment:<br>
+
+<!-- made this easier to read/follow -->
+<!-- * In root directory of `backend`, create a virtual environment:<br>
 `virtualenv venv` <br>
 * Activate the virtual environment: <br>
 `source venv/bin/activate` (if on Mac or Linux) <br>
@@ -50,5 +52,21 @@ Don't need anymore bc of merged project -->
 *  Migrate to the SQLite database:<br>
 `python manage.py migrate`
 * Start the backend Django server: <br>
-`python manage.py runserver`
+`python manage.py runserver` -->
 
+```bash
+$ # Create virtual environment
+$ virtualenv venv
+$ 
+$ # Activate virtual environment
+$ # If on Mac or Linux
+$  source venv/bin/activate
+$ # If on Windows
+$ c:\>c:\Python35\python -m venv c:\path\to\venv
+$ 
+$ # Connect to SQLite database
+$ python manage.py migrate
+$
+$ # Start the Django development server
+$ python manage.py runserver
+```
