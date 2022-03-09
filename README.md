@@ -2,17 +2,18 @@
  
 
 ### `About:`
-A full-stack, fully functional e-commerce website. 
+A fully functional e-commerce website that features user account registration and management functionality, a checkout process where users can add items to a cart, place orders, pay for orders with PayPal or a credit card and leave public
+item reviews. The website also features admin functionality for managing all users, products, inventory and orders from the frontend.
 
-The website features account registration and login functionality.  Once a user is logged in they can place orders, pay for orders with PayPal (or credit card), and access a user profile screen where account information can be added or changed and a table of orders and order status can be viewed. The frontend also features admin abilities to manage users, products and orders.
+This is a Django web-app. Django REST framework is being used to serve an API for the frontend to communicate with. The frontend features React for the user interface, Bootstrap for UI styling and Redux for state management. The live demo is using a PostgreSQL database hosted on AWS. The images are stored in AWS S3 buckets, the project is deployed via Heroku and PayPal is set to developer sandbox.
 
-This is a Django web-app.  Django REST framework is being used to build, customize and serve an API for the frontend to communicate with.  The frontend features React for the user interface, Bootstrap for UI styling and Redux for state management. 
+The `main` git branch uses an SQLite database for ease of running the project locally.
 
-The `main` git branch uses an SQLite database for ease of running the project locally. The `postgres` branch is using a live PostgreSQL database hosted on AWS.  The images on the `postgres` branch are hosted on AWS as well via S3 buckets and the entire branch is deployed live via Heroku.
-
+---
 ### `View Live:`
 [thirtysixchambers.herokuapp.com](https://thirtysixchambers.herokuapp.com/)
 
+---
 ### `Tech Stack:`
 
 `Frontend:`
@@ -28,12 +29,12 @@ The `main` git branch uses an SQLite database for ease of running the project lo
 | AWS | Heroku |
 | :----: | :----: | 
 | <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" width="50" height="50"/> | <img src="https://cdn.worldvectorlogo.com/logos/heroku-4.svg" width="50" height="50"/> |
-
-### `Run Locally:`
 ---
+### `Run Locally:`
+
 #### `Requirements:`
 * Python 3   <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" width="25" height="25"/>
----
+
 <!-- * Node.js <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" width="25" height="25"/>
  #### `Frontend:`
 * In root directory of `frontend`, install developer dependencies:<br> `npm i` <br>
